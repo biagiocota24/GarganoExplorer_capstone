@@ -1,0 +1,79 @@
+.userHome-hero {
+  height: 350px;
+}
+
+.userHero-button {
+  padding: 1em;
+  border-radius: 15px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.userHero-button.white-bg {
+  background-color: white;
+  color: var(--blu-scuro);
+}
+
+.transparent-bg {
+  background-color: rgba(26, 122, 150, 0.47);
+}
+
+.userMain-section {
+  background-color: rgb(237, 232, 232);
+}
+
+.categories-icons {
+  background-color: rgb(196, 225, 238);
+  border-radius: 10px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category {
+  transition: var(--transition);
+}
+.category:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+}
+
+#seeAll-btn {
+  background-color: white;
+  transition: var(--transition);
+}
+
+#seeAll-btn:hover {
+  cursor: pointer;
+  background-color: var(--blu-scuro);
+  color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .userHome-hero {
+    height: 260px;
+  }
+
+  .userHero-button {
+    font-size: 1rem;
+    padding: 0.7em;
+  }
+}
+
+@media (max-width: 480px) {
+  .userHome-hero {
+    height: 220px;
+  }
+
+  .categories-icons {
+    width: 48px;
+    height: 48px;
+  }
+}

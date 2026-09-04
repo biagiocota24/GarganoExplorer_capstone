@@ -1,0 +1,161 @@
+/* VARIABILI GLOBALI DEL PROGETTO GARGANO EXPLORER */
+:root {
+  /* COLORI PRINCIPALI */
+  --blu-mare: #1a7a96;
+  --blu-scuro: #0a6e8c;
+  --blu-notte: #1e2d35;
+  --blu-chiaro: #00a8d8;
+  --teal: #008B8B;
+  --ulivo-c: #a8b888;
+  --ulivo-s: #6b7c4f;
+  --terracotta: #d97d54;
+  --calce: #e8e0d0;
+
+  /* COLORI SEMANTICI */
+  --color-success: #27ae60;
+  --color-danger: #dc3545;
+  --color-muted: #6c757d;
+  --color-border: #dee2e6;
+
+  /* TESTO */
+  --text-primary: #1e2d35;
+  --text-muted: #6b7d87;
+
+  /* SFONDI */
+  --bg-page: #f4f6f9;
+  --bg-light: #f7fafb;
+
+  /* OMBRE */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 2px 14px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --shadow-card: 0 2px 14px rgba(0, 0, 0, 0.07);
+
+  /* RAGGI */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  /* TRANSIZIONI */
+  --transition: all 0.3s ease;
+
+  /* LAYOUT */
+  --navbar-height: 70px;
+}
+
+/* SFONDO PAGINE CON IMMAGINE */
+.sfondo {
+  background-image: url("/sfondo.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+/* CLASSI COLORE UTILITY */
+.blu-mare {
+  background-color: var(--blu-mare);
+}
+
+.ulivo-s {
+  color: var(--ulivo-s);
+}
+
+.ulivo-c {
+  color: var(--ulivo-c);
+}
+
+.calce {
+  color: var(--calce);
+}
+
+.link-hover:hover {
+  cursor: pointer;
+  color: var(--terracotta) !important;
+}
+
+
+/* BOTTONE SELEZIONE RUOLO */
+.role-button {
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  background-color: #edfdfd;
+  color: #666;
+  font-size: 0.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.role-button-active {
+  background: linear-gradient(135deg, var(--blu-mare), var(--blu-chiaro));
+  color: white;
+}
+
+/* WRAPPER SELECT CON LABEL */
+.select-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.select-wrapper label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* SELECT STILIZZATA GARGANO */
+.select-gargano {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid var(--teal);
+  border-radius: var(--radius-sm);
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23008B8B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  padding-right: 40px;
+}
+
+.select-gargano:hover {
+  border-color: #006B6B;
+  box-shadow: 0 2px 8px rgba(0, 139, 139, 0.15);
+}
+
+.select-gargano:focus {
+  outline: none;
+  border-color: #005555;
+  box-shadow: 0 0 0 3px rgba(0, 139, 139, 0.1);
+  background-color: #f9fffe;
+}
+
+.select-gargano option {
+  padding: 8px 12px;
+  background-color: white;
+  color: #333;
+}
+
+.select-gargano option:checked {
+  background-color: var(--teal);
+  color: white;
+}

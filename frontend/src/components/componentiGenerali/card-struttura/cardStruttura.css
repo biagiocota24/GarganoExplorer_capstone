@@ -1,0 +1,110 @@
+.struttura-card {
+  background: white;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.struttura-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.struttura-card-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.struttura-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.struttura-card:hover .struttura-card-image {
+  transform: scale(1.05);
+}
+
+.struttura-card-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.struttura-card-rating {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: white;
+  padding: 6px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #ffc107;
+  box-shadow: var(--shadow-sm);
+}
+
+.struttura-card-rating svg {
+  flex-shrink: 0;
+}
+
+.struttura-card-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.struttura-card-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.3;
+}
+
+.struttura-card-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #666;
+  font-size: 0.85rem;
+  margin-top: auto;
+}
+
+.struttura-card-location svg {
+  color: var(--blu-mare);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .struttura-card-image-container {
+    aspect-ratio: 1.2 / 1;
+  }
+
+  .struttura-card-name {
+    font-size: 0.95rem;
+  }
+
+  .struttura-card-info {
+    padding: 0.75rem;
+  }
+}

@@ -1,0 +1,120 @@
+/* ── Hero section ─────────────────────────────────────────────── */
+.hero-section {
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.hero-section span {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  opacity: 0.75;
+}
+
+.hero-section h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0;
+  max-width: 640px;
+  text-wrap: pretty;
+}
+
+.hero-section p {
+  font-size: 15px;
+  opacity: 0.82;
+  max-width: 480px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Select wrapper nel hero ──────────────────────────────────── */
+.hero-filters {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  width: 100%;
+  max-width: 700px;
+  margin-top: 8px;
+}
+
+/* Override: nel hero le select hanno sfondo leggermente traslucido
+   e ombra per emergere dal gradiente scuro */
+.hero-section .select-wrapper {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 0;
+}
+
+.hero-section .select-gargano {
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+  font-weight: 500;
+  font-size: 14.5px;
+  border-color: rgba(0, 139, 139, 0.6);
+}
+
+.hero-section .select-gargano:hover {
+  background-color: #fff;
+  border-color: var(--teal);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.22);
+}
+
+.hero-section .select-gargano:focus {
+  background-color: #fff;
+  border-color: var(--teal);
+  box-shadow:
+    0 0 0 3px rgba(0, 139, 139, 0.2),
+    0 4px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* ── Search form nel hero ─────────────────────────────────────── */
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(0, 139, 139, 0.3);
+  margin-top: 4px;
+}
+
+.form-wrapper input {
+  background: transparent;
+  color: #1e2d35;
+  font-size: 14.5px;
+  padding: 4px 2px;
+  outline: none;
+}
+
+.form-wrapper input::placeholder {
+  color: #8fa8b0;
+  font-size: 14px;
+}
+
+/* ── Area risultati ───────────────────────────────────────────── */
+.risultati-ricerca {
+  padding: 32px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (min-width: 768px) {
+  .hero-filters {
+    flex-direction: row;
+  }
+}

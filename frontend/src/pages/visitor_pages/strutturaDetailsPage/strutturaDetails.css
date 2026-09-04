@@ -1,0 +1,335 @@
+/* ── Variables ─────────────────────────────────────────────────── */
+:root {
+  --sd-primary:       var(--teal);
+  --sd-primary-dark:  var(--blu-scuro);
+  --sd-primary-light: #e0f7f7;
+  --sd-open:          var(--color-success);
+  --sd-closed:        var(--color-danger);
+  --sd-text:          var(--text-primary);
+  --sd-muted:         var(--text-muted);
+  --sd-border:        #ddedf0;
+  --sd-card-shadow:   0 2px 16px rgba(0, 139, 139, 0.09);
+}
+
+/* ── Layout container ─────────────────────────────────────────── */
+.sd-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+/* ── Feedback states ──────────────────────────────────────────── */
+.sd-loading,
+.sd-error,
+.sd-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 340px;
+  color: var(--sd-muted);
+  font-size: 15px;
+}
+.sd-loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--sd-primary-light);
+  border-top-color: var(--sd-primary);
+  border-radius: 50%;
+  animation: sd-spin 0.8s linear infinite;
+}
+@keyframes sd-spin { to { transform: rotate(360deg); } }
+
+/* ── Gallery ──────────────────────────────────────────────────── */
+.sd-gallery {
+  margin-bottom: 24px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--sd-card-shadow);
+}
+.sd-img-hero {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.25s ease;
+}
+.sd-img-placeholder {
+  width: 100%;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sd-primary-light);
+  color: var(--sd-muted);
+  font-size: 15px;
+}
+.sd-thumbnails {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  overflow-x: auto;
+  background: #f4fafa;
+  scrollbar-width: thin;
+  scrollbar-color: var(--sd-primary-light) transparent;
+}
+.sd-thumb {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.58;
+  border: 2px solid transparent;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+.sd-thumb:hover { opacity: 0.85; }
+.sd-thumb-active {
+  opacity: 1;
+  border-color: var(--sd-primary);
+}
+
+/* ── Card base ────────────────────────────────────────────────── */
+.sd-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--sd-card-shadow);
+  border: 1px solid var(--sd-border);
+}
+
+/* ── Header card ──────────────────────────────────────────────── */
+.sd-header-card {
+  margin-bottom: 16px;
+}
+.sd-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.sd-badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.sd-open  { background: #e8f8ef; color: var(--sd-open); }
+.sd-closed { background: #fdecea; color: var(--sd-closed); }
+.sd-badge-tipo {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 600;
+  background: var(--sd-primary-light);
+  color: var(--sd-primary-dark);
+}
+
+.sd-title {
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 700;
+  color: var(--sd-text);
+  margin: 0 0 10px;
+  line-height: 1.2;
+}
+.sd-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--sd-muted);
+  margin-bottom: 10px;
+}
+.sd-stelle {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: var(--sd-muted);
+}
+.sd-descrizione {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #3a4d56;
+  margin-bottom: 20px;
+}
+
+/* ── CTA button ───────────────────────────────────────────────── */
+.sd-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--sd-primary), var(--sd-primary-dark));
+  color: #fff;
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 6px 18px -6px rgba(0, 139, 139, 0.5);
+}
+.sd-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px -6px rgba(0, 139, 139, 0.55);
+  color: #fff;
+}
+
+/* ── Sections grid ────────────────────────────────────────────── */
+.sd-sections {
+  display: grid;
+  gap: 16px;
+}
+
+/* ── Section title ────────────────────────────────────────────── */
+.sd-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--sd-primary-dark);
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--sd-primary-light);
+}
+
+/* ── Info grid (label / value pairs) ─────────────────────────── */
+.sd-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.sd-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.sd-info-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--sd-muted);
+}
+.sd-info-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--sd-text);
+}
+
+/* ── Service chips ────────────────────────────────────────────── */
+.sd-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.sd-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.sd-chip-ok      { background: #e8f8ef; color: #1e7e42; }
+.sd-chip-no      { background: #fdecea; color: #b52a2a; }
+.sd-chip-neutral { background: var(--sd-primary-light); color: var(--sd-primary-dark); }
+
+/* ── Orari table ──────────────────────────────────────────────── */
+.sd-orari-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.sd-orari-table tr {
+  border-bottom: 1px solid var(--sd-border);
+}
+.sd-orari-table tr:last-child { border-bottom: none; }
+.sd-orari-table td {
+  padding: 10px 6px;
+  vertical-align: middle;
+}
+.sd-giorno {
+  width: 50%;
+  color: var(--sd-text);
+  font-weight: 500;
+}
+.sd-orario-aperto { color: var(--sd-open);  font-weight: 600; }
+.sd-orario-chiuso { color: var(--sd-closed); font-style: italic; }
+.sd-oggi .sd-giorno {
+  color: var(--sd-primary-dark);
+  font-weight: 700;
+}
+.sd-oggi {
+  background: var(--sd-primary-light);
+  border-radius: 8px;
+}
+
+/* ── Contacts list ────────────────────────────────────────────── */
+.sd-contatti {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sd-contatti li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--sd-text);
+}
+.sd-contatti li svg {
+  flex-shrink: 0;
+  color: var(--sd-primary);
+}
+.sd-contatti a {
+  color: var(--sd-primary-dark);
+  text-decoration: none;
+  word-break: break-all;
+}
+.sd-contatti a:hover { text-decoration: underline; }
+.sd-accesso-disabili {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--sd-border);
+}
+
+/* ── Struttura header (legacy, kept for backward compat) ──────── */
+.struttura-header {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .struttura-header {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+  }
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (min-width: 640px) {
+  .sd-info-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 900px) {
+  .sd-sections { grid-template-columns: 1fr 1fr; }
+  .sd-sections > .sd-card:first-child { grid-column: 1 / -1; }
+  .sd-img-hero { height: 500px; }
+}
+@media (min-width: 1024px) {
+  .sd-info-grid { grid-template-columns: 1fr 1fr 1fr; }
+}

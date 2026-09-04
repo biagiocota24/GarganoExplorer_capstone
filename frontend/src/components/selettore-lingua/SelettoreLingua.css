@@ -1,0 +1,83 @@
+.sel-lingua {
+  position: relative;
+  display: inline-block;
+}
+
+.sel-lingua-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 13px;
+  border: 1.5px solid var(--blu-mare, #1a7a96);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--blu-mare, #1a7a96);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sel-lingua-trigger:hover {
+  background-color: var(--blu-mare, #1a7a96);
+  color: white;
+}
+
+.sel-lingua-chevron {
+  display: inline-block;
+  font-style: normal;
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+  margin-left: 2px;
+}
+
+.sel-lingua-chevron.aperto {
+  transform: rotate(180deg);
+}
+
+.sel-lingua-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: 0 6px 20px rgba(10, 110, 140, 0.15);
+  overflow: hidden;
+  z-index: 1000;
+  min-width: 155px;
+  animation: sl-fade-in 0.15s ease both;
+}
+
+@keyframes sl-fade-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sel-lingua-opzione {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 9px 15px;
+  border: none;
+  background: transparent;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #555;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.15s ease;
+}
+
+.sel-lingua-opzione:hover {
+  background-color: #f0f8fb;
+  color: var(--blu-mare, #1a7a96);
+}
+
+.sel-lingua-opzione.attiva {
+  color: var(--blu-mare, #1a7a96);
+  background-color: #e5f4f8;
+}
